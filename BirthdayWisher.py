@@ -15,7 +15,7 @@ def send_email(to_email_id, subject, message):
     s.login(GMAIL_ID, GMAIL_PASSWORD)
 
     s.sendmail(GMAIL_ID, to_email_id, f"Subject: {subject} \n\n "
-                                      f"This is an auto generated mail from Raunak Bhagwani." 
+                                      f"This is an auto generated mail from Your_name" 
                                       f"He's just testing his Python application." 
                                       f"Sorry if it disturbed you. {message}")
     s.quit()
@@ -23,7 +23,7 @@ def send_email(to_email_id, subject, message):
 
 if __name__ == '__main__':
 
-    df = pd.read_excel('Final_data.xlsx')
+    df = pd.read_excel('Excel_sheet_name.xlsx')
     today = datetime.datetime.now().strftime("%d-%m")
     year_now = datetime.datetime.now().strftime("%Y")
     write_index = []
@@ -38,5 +38,5 @@ if __name__ == '__main__':
         for i in write_index:
             yr = df.loc[i, 'Year']
             df.loc[i, 'Year'] = str(yr) + ', ' + str(year_now)
-        df.to_excel('Final_data.xlsx', index = False)
+        df.to_excel('Excel_sheet_name.xlsx', index = False)
 
